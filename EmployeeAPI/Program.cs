@@ -10,14 +10,14 @@ builder.Services.AddSwaggerGen();
 
 // Add DB Context
 builder.Services.AddDbContext<EmployeeContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
         builder => builder
-            .WithOrigins("http://localhost:5173")
+            .WithOrigins("https://react-asp-net-api-crud.onrender.com")
             .AllowAnyMethod()
             .AllowAnyHeader());
 });
