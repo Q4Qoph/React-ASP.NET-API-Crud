@@ -2,19 +2,16 @@
 using EmployeeAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace EmployeeAPI.Migrations
 {
-    [DbContext(typeof(EmployeeContext))]
-    [Migration("20250112204016_UpdateEmployeeModel")]
-    partial class UpdateEmployeeModel
+    [DbContext(typeof(EmployeeDbContext))]
+    partial class EmployeeDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
@@ -39,6 +36,22 @@ namespace EmployeeAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Department = "IT",
+                            Name = "John Doe",
+                            Salary = 75000m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Department = "HR",
+                            Name = "Jane Smith",
+                            Salary = 65000m
+                        });
                 });
 #pragma warning restore 612, 618
         }

@@ -9,9 +9,9 @@ namespace EmployeeAPI.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        private readonly EmployeeContext _context;
+        private readonly EmployeeDbContext _context;
 
-        public EmployeeController(EmployeeContext context)
+        public EmployeeController(EmployeeDbContext context)
         {
             _context = context;
         }
