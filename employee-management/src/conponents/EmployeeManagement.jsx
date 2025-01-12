@@ -29,7 +29,7 @@ const EmployeeManagement = () => {
   });
 
   // API base URL - adjust this to match your backend
-  const API_URL = 'http://localhost:5065/api/employee';
+  const API_URL = 'https://webapi-2b3x.onrender.com/api/employee';
 
   // Fetch employees
   const fetchEmployees = async () => {
